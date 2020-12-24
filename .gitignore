@@ -1,1 +1,2 @@
 docker-django/blob/master/.gitignore
+.DS_Store
