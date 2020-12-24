@@ -1,0 +1,63 @@
+{% extends "cms/base.html" %}
+{% load static %}
+
+{% block title %} {{ questionandanswer.question_name }} {% endblock %}
+
+
+
+{% block hero %}
+<section class="hero is-small is-link is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">音声を聞き取り、英文を入力してください</h1>
+            <h2 class="subtitle">Listen carefully, and write your answer.</h2>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section is-size-4 has-text-centered">
+    一回再生
+    <div class="container">
+        <audio controls>
+            <source src="{{ questionandanswer.question_file.url }} ">
+        </audio>
+    </div>
+    【ループ再生】
+    <div class="container" loop="loop">
+        <audio controls>
+            <source src="{{ questionandanswer.question_file.url }} ">
+        </audio>
+    </div>
+</section>
+
+<section class="is-size-4 has-text-centered">
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="field">
+            <div class="control is-harf">
+                <input type="text" class="textarea is-medium is-hovered" id='text' name="text" placeholder="聞き取った英文を入力してください" value="{{ text }}"></input>
+            </div>
+            <input type="hidden" id='answer' name="answer" value="{{ questionandanswer.answer }} {{ answer }}"></input>
+            <button type="submit" value="解答する" class="button is-info is-outlined is-large">提出</button>
+        </div>
+    </form>
+
+    <div class="container is-size-5">
+        {% if result %}
+        あなたの得点は<em class="is-text-danger">{{ result }}</em>点です
+        {% else %}
+        結果はここに表示されます
+        {% endif %} 
+    </div>
+</section>
+
+<section class="has-text-right">
+    <a class="is-blue" href="{% url 'cms:question_list' %}">
+        <strong>Qusetionsへ戻る</strong>
+    </a>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}Home | {% endblock %}
+
+{% block hero %}
+<section class="hero is-medium is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Dictation note</h1>
+            <h2 class="subtitle">For all learners, For all teachers.</h2>
+            {% if user.is_authenticated %}
+            <a href="{% url 'cms:home' %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>Home</strong>
+                </button>
+            </a>
+            <a href="{% url 'cms:logout' %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>logout</strong>
+                </button>
+            </a>
+            {% else %}
+            <a href="{% url 'cms:signup' %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>sign up</strong>
+                </button>
+            </a>
+            <a href="{% url 'cms:login' %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>login</strong>
+                </button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section is-medium">
+    <div class="container">
+        <div class="has-text-centered">
+            <h1 class="title">Section</h1>
+            <h2>もっとディクテーションを簡単に。</h2>
+            <p>ディクテーションはインプットとアウトプットを同時に行える効率的な学習です。すべての英語学習者の手助けになれば幸いです。</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

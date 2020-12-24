@@ -1,0 +1,44 @@
+{% extends 'cms/base.html' %}
+
+{% block title %} Home| {% endblock %}
+
+{% block hero %}
+<section class="hero is-medium is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Welcome back! {{ user.last_name }} {{ user.first_name }}</h1>
+            <h2 class="subtitle">今日も頑張りましょう</h2>
+            <a href="{% url 'cms:question_list' %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>Questions</strong>
+                </button>
+            </a>
+            <a href="{% url 'cms:user_detail' user.pk %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>Account</strong>
+                </button>
+            </a>
+            <a href="{% url 'cms:user_delete' user.pk %}">
+                <button class="button is-info is-inverted is-outlined">
+                    <strong>退会</strong>
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
+
+{% block content %}
+<section class="section is-medium">
+    <div class="container">
+        <div class="has-text-centered">
+            <h1 class="title">Section</h1>
+            <h2>もっとディクテーションを簡単に。</h2>
+            <p>ディクテーションはインプットとアウトプットを同時に行える効率的な学習です。すべての英語学習者の手助けになれば幸いです。</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

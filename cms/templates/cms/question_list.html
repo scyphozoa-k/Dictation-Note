@@ -1,0 +1,30 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}問題一覧 | {% endblock %}
+
+{% block hero %}
+<section class="hero is-small is-link is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">問題一覧</h1>
+            <h2 class="subtitle">Questions</h2>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-12 is-vertical is-parent">
+                {% for object in object_list %}
+                <div class="tile is-child box">
+                   <a class="title is-4" href="{% url 'cms:question_detail' object.pk %}">{{ object.question_name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
