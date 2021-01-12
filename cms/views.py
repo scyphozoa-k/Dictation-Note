@@ -1,5 +1,5 @@
 from django.db import models
-from config.settings import LOGIN_REDIRECT_URL
+# from config.settings import LOGIN_REDIRECT_URL
 from django.shortcuts import render
 
 # Create your views here.
@@ -109,9 +109,6 @@ class QuestionDetail(LoginRequiredMixin, DetailView):
             }
 
         return render(request, 'cms/question_detail.html', context)
-
-    
-
 class Home(LoginRequiredMixin, TemplateView):
     model = UserModel
     template_name = 'cms/home.html'
