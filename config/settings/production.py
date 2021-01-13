@@ -3,7 +3,7 @@ from .common import *
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    , 
+    'dictationnote.ap-northeast-1.elasticbeanstalk.com', 
 ]
 
 DATABASES = {
