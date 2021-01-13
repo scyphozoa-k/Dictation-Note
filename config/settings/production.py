@@ -3,7 +3,7 @@ from .common import *
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'dictationote-env.eba-tpiezcfm.us-east-2.elasticbeanstalk.com', 
+    , 
 ]
 
 DATABASES = {
