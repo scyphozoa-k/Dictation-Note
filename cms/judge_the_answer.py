@@ -16,5 +16,4 @@ def judge_the_answer(text, ans):
 if __name__ == "__main__":
     pass
 
-# text_to_showのダブリをなくす
 

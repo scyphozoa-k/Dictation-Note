@@ -23,10 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = 'fuzm=0z)bsq0(za!_n6ehg!%ytfvp$%iufu5&&+(0j1r5fclhs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-## DEBUG = True
-
-## ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -38,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cms.apps.CmsConfig', 
+    # 'dictation_note.apps.Config', 
 ]
 
 MIDDLEWARE = [
@@ -73,18 +70,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-## DATABASES = {
-##     'default': {
-##         'ENGINE': 'django.db.backends.postgresql',
-##         'NAME': 'postgres',
-##         'USER': 'postgres',
-##         'HOST': 'db',
-##         'PORT': 5432,
-##         'PASSWORD': 'somepassword',
-##     }
-## }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -128,10 +113,11 @@ STATICFILES_DIRS = (
 )
 
 # Custom
-# AUTH_USER_MODEL = 'cms.User'
-# LOGIN_URL = 'cms:login'
-# LOGIN_REDIRECT_URL = 'cms:home'
-# LOGOUT_REDIRECT_URL = 'cms:top'
+AUTH_USER_MODEL = 'cms.User'
+
+LOGIN_URL = 'cms:login'
+LOGIN_REDIRECT_URL = 'cms:home'
+LOGOUT_REDIRECT_URL = 'cms:top'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
