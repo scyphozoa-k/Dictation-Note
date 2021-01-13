@@ -1,5 +1,5 @@
 from django.db import models
-# from config.settings import LOGIN_REDIRECT_URL
+# from config.settings.common import LOGIN_REDIRECT_URL
 from django.shortcuts import render
 
 # Create your views here.

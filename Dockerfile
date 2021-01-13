@@ -1,7 +1,7 @@
 FROM python:3.8
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
-WORKDIR /code
-COPY requirements.txt /code/
+RUN mkdir /dictation-note
+WORKDIR /dictation-note
+COPY requirements.txt /dictation-note/
 RUN pip install -r requirements.txt
-COPY . /code/
+COPY . /dictation-note/
