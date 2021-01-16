@@ -16,6 +16,9 @@
 /__pycache__
 *.cpython-38.pyc
 
+# Ignore .mp3
+/media/audio
+
 # the others
 docker-django/blob/master/.gitignore
 .DS_store
