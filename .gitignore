@@ -1,2 +1,21 @@
+# First, ignore everthing
+/*
+
+# Unignore my source code
+!/.ebextensions
+!/cms
+!/config
+!/docker-compose-yml
+!/Dockerfile
+!/manage.py
+!/media
+!/requirements.txt
+!/statics
+
+# Ignore __pycache__
+/__pycache__
+*.cpython-38.pyc
+
+# the others
 docker-django/blob/master/.gitignore
-.DS_Store
+.DS_store
